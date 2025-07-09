@@ -37,3 +37,7 @@ pnpm build
 ```sh
 pnpm lint
 ```
+
+## Attribution
+
+Icon from https://www.flaticon.com/packs/gambling-and-betting-services-2
