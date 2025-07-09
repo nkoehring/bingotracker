@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-black text-white;
+}
+
+#app {
+  width: 100vw;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  font-weight: normal;
+}
