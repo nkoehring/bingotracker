@@ -29,8 +29,8 @@ function reallyDeleteLog() {
 </script>
 
 <template>
-  <main class="flex gap-6">
-    <table class="w-[70vw] text-center">
+  <main class="flex bg-black overflow-x-auto">
+    <table class="w-screen md:w-140 text-center">
       <thead class="text-4xl bg-white/20">
         <tr>
           <th v-for="(_,col) in board">
@@ -40,15 +40,15 @@ function reallyDeleteLog() {
       </thead>
       <tbody>
         <tr v-for="i in 15" class="even:bg-white/10"  >
-          <td v-for="(list,col,j) in board" class="pl-6 py-1">
+          <td v-for="(list,col,j) in board" class="pl-1 md:pl-7 py-1">
             <BallSlot :n="j*15 + i" :filled="list[i-1]" @click="toggleAndLog(col, i)" />
           </td>
         </tr>
       </tbody>
     </table>
 
-    <aside class="w-[25vw] pt-5 flex flex-col justify-between">
-      <ol class="w-full max-h-[90vh] overflow-auto">
+    <aside class="w-40 pt-5 flex flex-col justify-between bg-gray-800">
+      <ol class="w-full max-h-[90vh] overflow-auto pl-2">
         <li class="font-bold">Historie:</li>
         <li v-for="entry in logEntries" :class="{
           'text-blue-100': entry.action === 'add',
@@ -59,7 +59,7 @@ function reallyDeleteLog() {
         </li>
       </ol>
       <div>
-        <Button @click="confirmReset = true" v-if="!confirmReset && !confirmDeleteLog">Spiel zurücksetzen</Button>
+        <Button @click="confirmReset = true" v-if="!confirmReset && !confirmDeleteLog">zurücksetzen</Button>
         <template v-else-if="!confirmDeleteLog">
           <Button @click="confirmReset = false">Doch nicht</Button>
           <Button @click="reallyReset()">Wirklich zurücksetzen!</Button>

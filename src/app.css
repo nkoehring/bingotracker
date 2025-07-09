@@ -1,13 +1,9 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-black text-white;
+  @apply bg-gray-800;
 }
 
 #app {
-  width: 100vw;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0;
-  font-weight: normal;
+  @apply w-180 bg-black text-white m-0 p-0
 }
